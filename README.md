@@ -7,10 +7,20 @@ Visit Here for Demo : https://nextjs-auth-xi-flame.vercel.app/
 
 ## Features
 - **Multi-provider Authentication**: Users can sign in using Google, Twitter, or GitHub accounts.
-- **User Account Details Display**: Upon successful authentication, users can view their account details.
-- **Token Refresh**: Configured token refresh mechanism to maintain authentication state.
-- **Idle Timeout**: Implemented idle timeout to enhance security by automatically logging out inactive users.
-- **Session Expiry**: Ensured sessions expire after a specified period for security purposes.
+- **User Account Details Display**: After successful login, users can view their account details such as name and email.
+- **Token Refresh**: Users' authentication tokens automatically refresh every 5 minutes to ensure seamless access to protected resources. (https://github.com/virajkini/nextjs-auth/blob/main/src/app/utils/auth/authManager.ts)
+- **Idle Timeout**: Implement an idle timeout feature that automatically logs the user out after 30 minutes of inactivity. Any user action should reset this timer.
+- **Session Expiry**: Define a session expiry policy where users are required to re-authenticate after 1 hour of continuous usage.
+- **Responsive Design**: The design is responsive, ensuring compatibility across various devices and screen sizes.
+- **Secure Environment Variables**: Environment variables aren't pushed to the repository for security purposes.
+- **Protected Profile Route**: Profile is wrapped with a withAuth wrapper that redirects to the homepage if the user is not logged in. (https://github.com/virajkini/nextjs-auth/tree/main/src/app/wrappers/withAuth)
+- **React Context for Authentication**: Used React context to handle authentication and pass state across components. (https://github.com/virajkini/nextjs-auth/blob/main/src/app/context/AuthContext.tsx)
+- **Server Authentication**: Haven't implemented server authentication, but it can be achieved by intercepting the redirect URL using getRedirectResult and calling the login API of the server. On the server side, Firebase Admin can be used to verify tokens and return a session ID in the cookie.
+
+## Challenges Faced
+- **FirebaseUI Implementation**: Had to understand how Next.js renders the page and lazy load the login component to disable SSR since FirebaseUI needed the window object.
+- **Next.js Middleware for Authorization**: Tried using Next.js middleware to authorize routes but understood it's only possible on the server side and was giving errors when the user object was accessed for the context API.
+
 
 ## Technologies Used
 - **Firebase Authentication**: Used for authentication with support for multiple providers.
