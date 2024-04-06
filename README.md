@@ -30,11 +30,11 @@ Visit Here for Demo : https://nextjs-auth-xi-flame.vercel.app/
 ## Configuration
 Ensure to configure the following environment variables in the `.env` file:
 
-NEXT_PUBLIC_FIREBASE_API_KEY=your-firebase-api-key
-NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=your-firebase-auth-domain
-NEXT_PUBLIC_FIREBASE_PROJECT_ID=your-firebase-project-id
-NEXT_PUBLIC_FIREBASE_APP_ID=your-firebase-app-id
-NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID=your-firebase-measurement-id
+- NEXT_PUBLIC_FIREBASE_API_KEY=your-firebase-api-key
+- NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=your-firebase-auth-domain
+- NEXT_PUBLIC_FIREBASE_PROJECT_ID=your-firebase-project-id
+- NEXT_PUBLIC_FIREBASE_APP_ID=your-firebase-app-id
+- NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID=your-firebase-measurement-id
 
 ## Usage
 - Sign in using your Google, Twitter, or GitHub account.
